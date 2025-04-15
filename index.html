@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/tracking.js" defer></script>
+    <script src="js/text-analyzer.js" defer></script>
+    <script src="js/theme-switcher.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#tools">Text Tools</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h1>About Me</h1>
+                <div class="about-content">
+                    <div class="profile-image">
+                        <img src="images/profile.jpg" alt="My Profile Picture">
+                    </div>
+                    <div class="about-text">
+                        <p>Hello! I'm a computer science student passionate about software development and problem-solving. I enjoy working on creative projects that combine technical skills with innovative thinking. When I'm not coding, you can find me playing online, working out in the gym, or experimenting with new cooking recipes.</p>
+                    </div>
+                </div>
+
+                <h2>My Birthplace</h2>
+                <p>Hyderabad</p>
+                <div class="birthplace-gallery">
+                    <div class="gallery-item">
+                        <img src="images/birthplace1.jpg" alt="Birthplace Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/birthplace2.jpg" alt="Birthplace Image 2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <h1>Education & Achievements</h1>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Bachelor of Technology in Computer Science at IIIT-Hyderabad</h3>
+                            <p>Currently pursuing my B.Tech at IIIT-Hyderabad with focus on Quantum Computing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 - 2023</div>
+                        <div class="timeline-content">
+                            <h3>Higher Secondary Education</h3>
+                            <p>Graduated with 95.2% score</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2019 - 2021</div>
+                        <div class="timeline-content">
+                            <h3>Secondary Education</h3>
+                            <p>Graduated with perfect GPA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements">
+                    <h2>Achievements</h2>
+                    <div class="achievements-gallery">
+                        <div class="achievement-item">
+                            <div class="achievement-content">
+                                <h3>Spell-Bee Nationals</h3>
+                                <p>Competed in the Spell-Bee nationals (2018)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h1>Technical Skills</h1>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Expert Level</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">C/C++</div>
+                            <div class="skill-item">Qiskit</div>
+                            <div class="skill-item">X86-64 Assembly Coding</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Intermediate Level</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">Git and Version control</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">SQL</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Beginner Level</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">HTML</div>
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">CSS</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-download">
+                    <h2>Download My CV</h2>
+                    <a href="assets/cv.pdf" download class="download-btn">Download PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Analysis Tool (Q3) -->
+        <section id="tools" class="tools-section">
+            <div class="container">
+                <h1>Text Analysis Tool</h1>
+                <div class="text-analyzer">
+                    <div class="input-area">
+                        <label for="text-input">Enter text (10,000+ words recommended):</label>
+                        <textarea id="text-input" rows="10" placeholder="Paste or type your text here..."></textarea>
+                        <button id="analyze-btn">Analyze Text</button>
+                    </div>
+                    <div class="results">
+                        <div class="result-box">
+                            <h3>Basic Statistics</h3>
+                            <div id="basic-stats"></div>
+                        </div>
+                        <div class="result-box">
+                            <h3>Pronouns</h3>
+                            <div id="pronouns-stats"></div>
+                        </div>
+                        <div class="result-box">
+                            <h3>Prepositions</h3>
+                            <div id="prepositions-stats"></div>
+                        </div>
+                        <div class="result-box">
+                            <h3>Indefinite Articles</h3>
+                            <div id="articles-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Personal Website | Created for ISS Assignment-3</p>
+        </div>
+    </footer>
+</body>
+</html>

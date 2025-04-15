@@ -1,0 +1,643 @@
+/* Base Styles */
+:root {
+    --primary-color: #4a6fa5;
+    --secondary-color: #166088;
+    --accent-color: #4fc3f7;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --light-gray: #e0e0e0;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Dark mode colors */
+    --dark-primary-color: #6a8cbc;
+    --dark-secondary-color: #2d8bbd;
+    --dark-accent-color: #64d8ff;
+    --dark-background-color: #121212;
+    --dark-secondary-background: #1e1e1e;
+    --dark-text-color: #e0e0e0;
+    --dark-light-gray: #4a4a4a;
+    --dark-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    color: var(--secondary-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
+header {
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-image img {
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-image img:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    flex: 2;
+}
+
+.birthplace-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Education Section */
+.education-section {
+    background-color: white;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--light-gray);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    left: 0;
+    margin-bottom: 20px;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.achievements ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+/* Achievements section */
+.achievements-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.achievement-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-content {
+    padding: 1.5rem;
+}
+
+.achievement-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Dark mode support for achievements */
+.dark-mode .achievement-item {
+    background-color: var(--dark-secondary-background);
+}
+
+/* Responsive adjustments for achievements */
+@media (max-width: 768px) {
+    .achievements-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-item {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.resume-download {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Text Analysis Tool */
+.tools-section {
+    background-color: white;
+}
+
+.text-analyzer {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.input-area {
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-box {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.result-box h3 {
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+/* Dark Mode - Navigation */
+.dark-mode header {
+    background-color: var(--dark-secondary-background);
+    box-shadow: var(--dark-box-shadow);
+}
+
+.dark-mode .logo {
+    color: var(--dark-primary-color);
+}
+
+.dark-mode .nav-links a {
+    color: var(--dark-text-color);
+}
+
+.dark-mode .nav-links a:hover {
+    color: var(--dark-accent-color);
+}
+
+/* Dark Mode - Headings */
+.dark-mode h1,
+.dark-mode h2 {
+    color: var(--dark-secondary-color);
+}
+
+.dark-mode h3 {
+    color: var(--dark-primary-color);
+}
+
+/* Dark Mode - About Section */
+.dark-mode .profile-image img {
+    box-shadow: var(--dark-box-shadow);
+}
+
+.dark-mode .gallery-item img {
+    box-shadow: var(--dark-box-shadow);
+}
+
+/* Dark Mode - Education Section */
+.dark-mode .education-section {
+    background-color: var(--dark-secondary-background);
+}
+
+.dark-mode .timeline::after {
+    background-color: var(--dark-light-gray);
+}
+
+.dark-mode .timeline-date {
+    color: var(--dark-secondary-color);
+}
+
+.dark-mode .timeline-content {
+    background-color: var(--dark-secondary-background);
+    box-shadow: var(--dark-box-shadow);
+}
+
+/* Dark Mode - Skills Section */
+.dark-mode .skill-category {
+    background-color: var(--dark-secondary-background);
+    box-shadow: var(--dark-box-shadow);
+}
+
+.dark-mode .skill-item {
+    background-color: var(--dark-accent-color);
+}
+
+.dark-mode .download-btn {
+    background-color: var(--dark-primary-color);
+}
+
+.dark-mode .download-btn:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+/* Dark Mode - Text Analysis Tool */
+.dark-mode .tools-section {
+    background-color: var(--dark-secondary-background);
+}
+
+.dark-mode .text-analyzer {
+    background-color: var(--dark-background-color);
+    box-shadow: var(--dark-box-shadow);
+}
+
+.dark-mode textarea {
+    background-color: var(--dark-secondary-background);
+    color: var(--dark-text-color);
+    border-color: var(--dark-light-gray);
+}
+
+.dark-mode button {
+    background-color: var(--dark-primary-color);
+}
+
+.dark-mode button:hover {
+    background-color: var(--dark-secondary-color);
+}
+
+.dark-mode .result-box {
+    background-color: var(--dark-secondary-background);
+    box-shadow: var(--dark-box-shadow);
+}
+
+/* Dark Mode - Footer */
+.dark-mode footer {
+    background-color: var(--dark-primary-color);
+}
+
+/* Dark Mode - Theme Toggle */
+.dark-mode .theme-toggle {
+    background-color: var(--dark-secondary-color);
+}
+
+/* Event Tracking Panel */
+.tracking-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+.tracking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tracking-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+}
+
+.toggle-panel {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.tracking-content {
+    padding: 10px 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.tracking-content.hidden {
+    display: none;
+}
+
+.events-list {
+    border-top: 1px solid var(--light-gray);
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.event-item {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-time {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
+
+.event-type {
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+/* Dark mode support for tracking panel */
+.dark-mode .tracking-panel {
+    background-color: var(--dark-secondary-background);
+}
+
+.dark-mode .tracking-header {
+    background-color: var(--dark-primary-color);
+}
+
+.dark-mode .events-list,
+.dark-mode .event-item {
+    border-color: var(--dark-light-gray);
+}
+
+.dark-mode .event-time {
+    color: var(--dark-accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .birthplace-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+}
